@@ -1,4 +1,1 @@
-if (CONFIG_ZMK_INPUT_PROCESSOR_INERTIA)
-  zephyr_library()
-  zephyr_library_sources(src/input_processor_inertia.c)
-endif()
+target_sources_ifdef(CONFIG_ZMK_INPUT_PROCESSOR_INERTIA app PRIVATE src/input_processor_inertia.c)
